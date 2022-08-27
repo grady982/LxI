@@ -14,3 +14,18 @@ Recording some of the Leetcode and interview questions.
 - Processand
 - Viewsonic
 - SprintTree
+
+## Setting
+
+```shell
+# creates a package.json file.
+npm --init
+
+# Initializes a TypeScript project and creates a tsconfig.json file.
+# https://www.typescriptlang.org/docs/handbook/compiler-options.html
+tsc --init
+
+# to rapidly generate webpack configuration files for your project requirements
+# https://webpack.js.org/configuration/
+webpack-cli init
+```

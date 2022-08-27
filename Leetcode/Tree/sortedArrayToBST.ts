@@ -1,41 +1,66 @@
-// not finished yet
+import { TreeNode } from "./TreeNode";
+
 // 108. Convert Sorted Array to Binary Search Tree
 
-/** Definition for a binary tree node. */
-class TreeNode {
-  val: number;
-  left: TreeNode | null;
-  right: TreeNode | null;
-  constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
-    this.val = val === undefined ? 0 : val;
-    this.left = left === undefined ? null : left;
-    this.right = right === undefined ? null : right;
-  }
-}
+// function sortedArrayToBST(nums: number[]): TreeNode | null {
+//   const middleIndex: number = Math.floor(nums.length / 2);
+//   const headNode: TreeNode = new TreeNode(nums[middleIndex], null, null);
+//   console.log(`middleIndex: ${middleIndex}`);
+//   let leftNode =
+//     middleIndex - 1 >= 0
+//       ? new TreeNode(nums[middleIndex - 1], null, null)
+//       : null;
+//   let rightNode =
+//     nums.length - 1 !== middleIndex
+//       ? new TreeNode(nums[nums.length - 1], null, null)
+//       : null;
 
-function sortedArrayToBST(nums: number[]): TreeNode | null {
-  const middleIndex: number = Math.round(nums.length / 2) - 1;
-  const headNode: TreeNode = new TreeNode(nums[middleIndex], null, null);
-  let leftNode = new TreeNode(nums[middleIndex + 1], null, null);
-  let rightNode = new TreeNode(nums[middleIndex - 1], null, null);
+//   headNode.left = leftNode;
+//   headNode.right = rightNode;
 
-  headNode.left = leftNode;
-  headNode.right = rightNode;
+//   if (leftNode) {
+//     for (let i = middleIndex - 2; i >= 0; i--) {
+//       leftNode.left = new TreeNode(nums[i], null, null);
+//       leftNode = leftNode.left;
+//     }
+//   }
 
-  for (let i = middleIndex - 2; i >= 0; i--) {
-    leftNode.left = new TreeNode(nums[i], null, null);
-    leftNode = leftNode.left;
-  }
+//   if (rightNode) {
+//     for (let i = nums.length - 2; i > middleIndex; i--) {
+//       rightNode.left = new TreeNode(nums[i], null, null);
+//       rightNode = rightNode.left;
+//     }
+//   }
 
-  for (let i = nums.length; i > middleIndex + 2; i--) {
-    rightNode.left = new TreeNode(nums[i], null, null);
-    rightNode = rightNode.left;
-  }
+//   return headNode;
+// }
 
-  return headNode;
-}
+// [-10, -3, 0, 5, 9]
+
+const convertHelper = (
+  nums: number[],
+  start: number,
+  end: number
+): TreeNode | null => {
+  if (start > end) return null;
+  let middle = Math.floor((start + end) / 2);
+
+  const root = new TreeNode(nums[middle]);
+  root.left = convertHelper(nums, start, middle - 1);
+  root.right = convertHelper(nums, middle + 1, end);
+
+  return root;
+};
+
+const sortedArrayToBST = (nums: number[]): TreeNode | null => {
+  let start = 0;
+  let end = nums.length - 1;
+
+  return convertHelper(nums, start, end);
+};
 
 const input: number[] = [-10, -3, 0, 5, 9];
+// const input: number[] = [1, 3];
 const output = sortedArrayToBST(input);
 
 console.log(JSON.stringify(output));

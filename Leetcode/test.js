@@ -41,7 +41,7 @@ var uniquePaths = function (m, n) {
   // return way;
 };
 
-const m = 3,
-  n = 2;
-const result = uniquePaths(m, n);
-console.log(`result: ${result}`);
+// const m = 3,
+//   n = 2;
+// const result = uniquePaths(m, n);
+// console.log(`result: ${result}`);

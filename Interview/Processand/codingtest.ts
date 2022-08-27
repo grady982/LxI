@@ -41,17 +41,6 @@ const substituteArrayValue = (
   position: number,
   newValue: any
 ): any[] => {
-  function diveArray2<T>(arr: T[]): T[] {
-    return arr.map((data) => {
-      if (Array.isArray(data)) {
-        return diveArray(data);
-      } else {
-        index++;
-        return index - 1 === position ? newValue : data;
-      }
-    });
-  }
-
   const diveArray = (arr: any[]): any => {
     return arr.map((data) => {
       if (Array.isArray(data)) {

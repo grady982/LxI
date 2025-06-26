@@ -1,5 +1,14 @@
-## Hash Table
+# Data Structures
+- Array
+- Stack
+- Queue
+- Linked List
+- Tree
+- Trie
+- Graph
+- Hash Table
 
+## Hash Table
 
 ## Linked List
 Each node contain value and pointer, the pointer is information about the next node.
@@ -50,3 +59,19 @@ Node(Vertex) connected with Edge
 - Edge List
 - Adjacent List
 - Adjacent Matrix
+
+--------
+
+# Algorithm
+- Sorting
+- Dynamic Programming
+- BFS + DFS (Searching)
+- Recursion
+
+
+## Sort
+- Bubble Sort
+- Insertion Sort
+- Selection Sort
+- Merge Sort
+- Quick Sort

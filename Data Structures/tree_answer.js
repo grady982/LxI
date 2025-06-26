@@ -1,5 +1,3 @@
-// visual Tree => https://visualgo.net/en/bst
-
 class Node {
   constructor(value) {
     this.left = null;
@@ -13,45 +11,49 @@ class BinarySearchTree {
     this.root = null;
   }
   insert(value) {
-    let currentNode = this.root;
     const newNode = new Node(value);
 
     if (this.root === null) {
-        this.root = newNode;
-        return;
-    }
-
-    while (currentNode !== null && currentNode.value !== value) {
-        if (value > currentNode.value) {
-            if (currentNode.right === null) {
-                currentNode.right = newNode;
-            } else {
-                currentNode = currentNode.right;
-            }
-        } else if (value < currentNode.value) {
-            if (currentNode.left === null) {
-                currentNode.left = newNode;
-            } else {
-                currentNode = currentNode.left;
-            }
-        } 
-    }
-
-    this.currentNode = newNode;
-  }
-
-  lookup(value) {
-    let currentNode = this.root;
-    
-    while (currentNode !== null && currentNode.value !== value) {
-        if (value > currentNode.value) {
-            currentNode = currentNode.right;
-        } else if (value < currentNode.value) {
-            currentNode = currentNode.left;
+      this.root = newNode;
+    } else {
+      let currentNode = this.root;
+      while (true) {
+        if (currentNode.value > value) {
+          // Left
+          if (!currentNode.left) {
+            currentNode.left = newNode;
+            return this;
+          }
+          currentNode = currentNode.left;
+        } else {
+          // Right
+          if (!currentNode.right) {
+            currentNode.right = newNode;
+            return this;
+          }
+          currentNode = currentNode.right;
         }
+      }
     }
+  }
+  lookup(value) {
+    if (!this.root) {
+      return false;
+    }
+    let currentNode = this.root;
 
-    return currentNode;
+    while (currentNode) {
+      if (currentNode.value > value) {
+        // Left
+        currentNode = currentNode.left;
+      } else if (currentNode.value < value) {
+        // Right
+        currentNode = currentNode.right;
+      } else if (currentNode.value === value) {
+        return currentNode;
+      }
+    }
+    return false;
   }
 
   remove(value) {
@@ -133,22 +135,19 @@ class BinarySearchTree {
 }
 
 const tree = new BinarySearchTree();
-tree.insert(60);
-tree.insert(30);
-tree.insert(55);
+tree.insert(9);
+tree.insert(4);
+tree.insert(6);
+tree.insert(20);
+tree.insert(170);
+tree.insert(15);
 tree.insert(1);
-tree.insert(38);
-tree.insert(44);
-
-tree.remove(30);
-
-console.log(JSON.stringify(traverse(tree.root)));
+tree.remove(170);
 JSON.stringify(traverse(tree.root));
-// console.log(tree.lookup(20));
-//         60
-//      30     72
-//  1       55 
-//      38
+console.log(tree.lookup(20));
+//     9
+//  4     20
+//1  6  15  170
 
 function traverse(node) {
   const tree = { value: node.value };

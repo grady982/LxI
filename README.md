@@ -1,12 +1,18 @@
 # Data Structures
-- Array
-- Stack
-- Queue
-- Linked List
-- Tree
-- Trie
-- Graph
-- Hash Table
+- Array                     - Trees
+- Stacks                    - Tries
+- Queues                    - Graphs
+- Linked Lists              - Hash Tables
+
+# Algorithm
+- Sorting
+- Dynamic Programming
+- BFS + DFS (Searching)
+- Recursion
+
+===
+
+# Data Structures
 
 ## Hash Table
 
@@ -60,14 +66,9 @@ Node(Vertex) connected with Edge
 - Adjacent List
 - Adjacent Matrix
 
---------
+===
 
 # Algorithm
-- Sorting
-- Dynamic Programming
-- BFS + DFS (Searching)
-- Recursion
-
 
 ## Sort
 - Bubble Sort
@@ -75,3 +76,12 @@ Node(Vertex) connected with Edge
 - Selection Sort
 - Merge Sort
 - Quick Sort
+
+## Searching / Traversal
+
+- Linear Search
+- Binary Search
+- Depth First Search (DFS)
+    - search one branch of the tree down as many levels as possible until the target node is found or the end is reach 
+- Breadth First Search (BFS)
+    - go through each level of nodes from left to right

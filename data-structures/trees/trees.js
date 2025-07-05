@@ -143,7 +143,6 @@ tree.insert(44);
 tree.remove(30);
 
 console.log(JSON.stringify(traverse(tree.root)));
-JSON.stringify(traverse(tree.root));
 // console.log(tree.lookup(20));
 //         60
 //      30     72

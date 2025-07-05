@@ -83,5 +83,11 @@ Node(Vertex) connected with Edge
 - Binary Search
 - Depth First Search (DFS)
     - search one branch of the tree down as many levels as possible until the target node is found or the end is reach 
+    - Less Memory
+    - Dose Path Exist?
+    - Can Get Slow
 - Breadth First Search (BFS)
     - go through each level of nodes from left to right
+    - Shortest Path
+    - Closer Nodes
+    - More Memory

@@ -61,3 +61,16 @@ var climbStairs = function(n) {
 //     2        3        3       4 
 //   3   4   4     5
 // 4
+
+// 用 recursion 的方式來做
+var climbStairs = function(n) {
+    var climb = function(s) {
+        if (s <= 2) {
+            return s;
+        }
+        return climb(s - 1) + climb(s - 2);
+    }   
+
+
+    return climb(n);
+};

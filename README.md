@@ -7,8 +7,6 @@
 | Queues            | Graphs                 |
 | Linked Lists      | Hash Tables            |
 
----
-
 ### Linked List
 
 Each node contains a value and a pointer (reference) to the next node in memory.
@@ -17,27 +15,19 @@ Each node contains a value and a pointer (reference) to the next node in memory.
 - **Doubly Linked List**: points to both previous and next nodes  
 - A pointer is simply a reference to another memory location.
 
----
-
 ### Stack
 
 - **LIFO**: Last In, First Out  
 - Think of a stack of plates: new ones go on top, and you remove from the top.
-
----
 
 ### Queue
 
 - **FIFO**: First In, First Out  
 - Like people lining up — first person in line is served first.
 
----
-
 ### Hash Table
 
 A key-value data structure with fast lookup, insertion, and deletion.
-
----
 
 ### Trees
 
@@ -61,17 +51,16 @@ A tree structure where:
 - Specialized tree structure optimized for string storage and prefix search.
 - Ideal for autocomplete or dictionary applications.
 
----
-
 ### Graph
 
 A set of nodes (vertices) connected by edges.
 
-#### Graph Types
+| Graph Type                  |
+|----------------------------|
+| **Directed** / **Undirected** |
+| **Weighted** / **Unweighted** |
+| **Cyclic** / **Acyclic**      |
 
-- **Directed** / **Undirected**
-- **Weighted** / **Unweighted**
-- **Cyclic** / **Acyclic**
 
 ##### DAG (Directed Acyclic Graph)
 
@@ -83,6 +72,7 @@ A directed graph with no cycles — often used in scheduling and dependency reso
 - **Adjacency List**
 - **Adjacency Matrix**
 
+---
 
 # Algorithms
 

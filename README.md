@@ -1,93 +1,123 @@
 # Data Structures
-- Array                     - Trees
-- Stacks                    - Tries
-- Queues                    - Graphs
-- Linked Lists              - Hash Tables
 
-# Algorithm
-- Sorting
-- Dynamic Programming
-- BFS + DFS (Searching)
-- Recursion
+| Linear Structures | Non-Linear Structures |
+|-------------------|------------------------|
+| Array             | Trees                  |
+| Stacks            | Tries                  |
+| Queues            | Graphs                 |
+| Linked Lists      | Hash Tables            |
 
-===
+---
 
-# Data Structures
+### Linked List
 
-## Hash Table
+Each node contains a value and a pointer (reference) to the next node in memory.
 
-## Linked List
-Each node contain value and pointer, the pointer is information about the next node.
-Doubly Linked List has two pointer about previous and next node.
-A pointer is simply a reference to something else in memory.
+- **Singly Linked List**: points only to the next node  
+- **Doubly Linked List**: points to both previous and next nodes  
+- A pointer is simply a reference to another memory location.
 
-- Singly Linked List
-- Doubly Linked List
+---
 
-## Stack
-LIFO => last in first out
-像盤子一樣往上疊
+### Stack
 
-## Queue
-FIFO => first in first out
+- **LIFO**: Last In, First Out  
+- Think of a stack of plates: new ones go on top, and you remove from the top.
 
-## Trees
+---
 
-- Binary Search Tree
-    - Balanced BST
-        - AVL Tree
-        - Red Black Tree
-- Heap
-    no order from left to right. The parent is always greater then children.
-    It's fast to find max and min.
-    - Priority Queue
-- Trie
-    字典樹，屬於 Tree 的衍生資料結構
-    Trie 可以當成是專門儲存 Strings 的可行方案，尤其需要 prefix search 的情況特別適合。
+### Queue
 
-## Graph
+- **FIFO**: First In, First Out  
+- Like people lining up — first person in line is served first.
 
-Node(Vertex) connected with Edge
+---
 
-- Directed 
-- Undirected
+### Hash Table
 
-- Weighted 
-- Unweighted
+A key-value data structure with fast lookup, insertion, and deletion.
 
-- Cyclic
-- Acyclic
+---
 
-### Directed Acyclic Graph (DAG)
+### Trees
 
-### three ways to create graph
+#### Binary Search Tree (BST)
 
-- Edge List
-- Adjacent List
-- Adjacent Matrix
+A tree structure where:
+- Left child < parent < right child
 
-===
+##### Balanced BST
+- AVL Tree
+- Red-Black Tree
 
-# Algorithm
+#### Heap
 
-## Sort
+- A complete binary tree where the parent is always greater (Max Heap) or smaller (Min Heap) than its children.
+- Efficient for finding max or min values.
+  - **Priority Queue** is often implemented with heaps.
+
+#### Trie (Prefix Tree)
+
+- Specialized tree structure optimized for string storage and prefix search.
+- Ideal for autocomplete or dictionary applications.
+
+---
+
+### Graph
+
+A set of nodes (vertices) connected by edges.
+
+#### Graph Types
+
+- **Directed** / **Undirected**
+- **Weighted** / **Unweighted**
+- **Cyclic** / **Acyclic**
+
+##### DAG (Directed Acyclic Graph)
+
+A directed graph with no cycles — often used in scheduling and dependency resolution.
+
+#### Graph Representations
+
+- **Edge List**
+- **Adjacency List**
+- **Adjacency Matrix**
+
+
+# Algorithms
+
+| Algorithm Type             |
+|----------------------------|
+| **Sorting**                |
+| **Dynamic Programming**    |
+| **Searching & Traversal**  |
+| - BFS (Breadth-First Search) |
+| - DFS (Depth-First Search)  |
+| **Recursion**              |
+
+
+### Sorting Algorithms
+
 - Bubble Sort
 - Insertion Sort
 - Selection Sort
 - Merge Sort
 - Quick Sort
 
-## Searching / Traversal
+### Searching Algorithms
 
 - Linear Search
 - Binary Search
-- Depth First Search (DFS)
-    - search one branch of the tree down as many levels as possible until the target node is found or the end is reach 
-    - Less Memory
-    - Dose Path Exist?
-    - Can Get Slow
-- Breadth First Search (BFS)
-    - go through each level of nodes from left to right
-    - Shortest Path
-    - Closer Nodes
-    - More Memory
+
+### Graph Traversal
+
+#### Depth-First Search (DFS)
+- Explores as far as possible along each branch before backtracking
+- Uses less memory
+- Good for: *Path Existence*
+- Can be slow on wide graphs
+
+#### Breadth-First Search (BFS)
+- Explores all neighbors at the present depth prior to moving on
+- Uses more memory
+- Good for: *Shortest Path*, *Closer Nodes First*
